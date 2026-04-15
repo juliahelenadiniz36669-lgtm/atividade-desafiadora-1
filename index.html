@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafiadora parte 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="imagens/imagem de calculadora branca.png"> 
+    <div class="titulo">
+        <h1>CALCULADORA DE ORÇAMENTOS</h1>
+        <h4>GERENCIE SUAS TAREFAS E CALCULE CUSTOS </h4>
+    </div>
+</header>
+
+<div class="tabs">
+  <button id="tabTasks" class="active">Tarefas</button>
+  <button id="tabBudget">Orçamentos</button>
+</div>
+
+<div class="container">
+
+  <div id="tasksSection">
+    <div class="card">
+      <h3>Valor por hora 💵</h3>
+      <input type="number" id="hourValue" value="50">
+      <button class="primary" onclick="updateHour()">Atualizar</button>
+      <p id="currentValue">Valor atual: R$50,00</p>
+    </div>
+
+    <div class="card">
+      <h3>Adicionar tarefa 🗒️ </h3>
+      <input type="text" id="taskName" placeholder="Nome da tarefa">
+      <input type="number" id="taskHours" placeholder="Horas">
+      <button class="primary" onclick="addTask()">+Adicionar</button>
+    </div>
+
+    <div class="card">
+      <h3>Lista de tarefas 📝</h3>
+      <div id="taskList" class="task-list">Nenhuma tarefa adicionada ainda.</div>
+    </div>
+  </div>
+
+  <div id="budgetSection" class="hidden">
+    <div class="card">
+      <h3>Orçamento do Projeto</h3>
+      <p>Resumo detalhado dos custos por tarefa</p>
+    </div>
+
+    <div class="card">
+      <h3>Detalhamento por tarefa</h3>
+      <div id="budgetList">Nenhuma tarefa para calcular</div>
+    </div>
+
+    <div class="stats">
+      <div class="box">Total de Tarefas<br><span id="totalTasks">0</span></div>
+      <div class="box">Total de Horas<br><span id="totalHours">0</span></div>
+      <div class="box">Valor/Hora<br><span id="valueHour">0</span></div>
+    </div>
+    <br>
+
+    <div class="card">
+      <h3>Custo Total do Projeto</h3>
+      <p id="totalCost">R$0,00</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="imagens/imagem de calculadora branca.png" alt="Calculadora">
+            <span>CALCULADORA DE ORÇAMENTOS</span>
+        </div>
+
+        <div class="footer-info">
+            <p>Gerencie suas tarefas e projetos de forma eficiente</p>
+            <p>© 2026 - Todos os direitos reservados</p>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+
