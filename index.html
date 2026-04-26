@@ -17,29 +17,33 @@
 </header>
 
 <div class="tabs">
-  <button id="tabTasks" class="active">Tarefas</button>
-  <button id="tabBudget">Orçamentos</button>
-</div>
+  <button id="tabTasks" class="active">
+  <img src="/imagens/tarefa.png" alt="" class="tab-icone">Tarefas
+  </button>
+  <button id="tabBudget">
+  <img src="/imagens/orçamento.png" alt="" class="tab-icone">Orçamento
+  </button>
+</div>  
 
 <div class="container">
 
   <div id="tasksSection">
     <div class="card">
-      <h3>Valor por hora 💵</h3>
+      <h3>$ Valor por hora</h3>
       <input type="number" id="hourValue" value="50">
       <button class="primary" onclick="updateHour()">Atualizar</button>
       <p id="currentValue">Valor atual: R$50,00</p>
     </div>
 
     <div class="card">
-      <h3>Adicionar tarefa 🗒️ </h3>
+      <h3>Adicionar tarefa</h3>
       <input type="text" id="taskName" placeholder="Nome da tarefa">
       <input type="number" id="taskHours" placeholder="Horas">
       <button class="primary" onclick="addTask()">+Adicionar</button>
     </div>
 
     <div class="card">
-      <h3>Lista de tarefas 📝</h3>
+      <h3>Lista de tarefas</h3>
       <div id="taskList" class="task-list">Nenhuma tarefa adicionada ainda.</div>
     </div>
   </div>
@@ -48,6 +52,11 @@
     <div class="card">
       <h3>Orçamento do Projeto</h3>
       <p>Resumo detalhado dos custos por tarefa</p>
+      <select id="urgencia" onchange="updateBudget()">
+      <option value="1">Sem urgência</option>
+      <option value="1.2">Urgência</option>
+      <option value="1.5">Muita urgência</option>
+      </select>
     </div>
 
     <div class="card">

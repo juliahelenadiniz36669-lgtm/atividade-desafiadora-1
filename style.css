@@ -8,37 +8,49 @@ header {
   background: #0055ff; 
   color: white;
   padding: 20px;
-  height: auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+header img {
+  width: 60px;
 }
 
 .titulo {
-    display: column;
-    margin-top: -10px;
+  margin-top: -10px;
 }
 
-
 .tabs {
-  background: white; 
-  padding: 10px 20px;
-  border-bottom: 1px solid #74a2ff;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
 }
 
 .tabs button {
-  padding: 8px 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;           
+  padding: 10px 20px;  
   border: none;
-  margin-right: 10px;
-  border-radius: 5px 5px 0 0; 
   cursor: pointer;
-  background: #f0f0f0;
+  font-size: 18px;
+  border-radius: 5px; 
+  background: #74a2ff;
   font-weight: bold;
+}
+
+.tab-icone{
+  width: 25px;
+  height: 25px;
 }
 
 button:active {
   background-color: #0055ff;
   color: rgb(153, 189, 255);
 }
-
 
 .container {
   padding: 20px;
@@ -51,7 +63,7 @@ button:active {
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-  border: 2px solid #74a2ff; 
+  box-shadow: 2px 2px 2px #74a2ff; 
 }
 
 input {
@@ -67,14 +79,6 @@ input::placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-img {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 20px;
-    width: 60px;
-    height: 60px;
-}
-
 button.primary {
   background: #0055ff;
   color: white;
@@ -85,11 +89,30 @@ button.primary {
   font-weight: bold;
 }
 
+.tarefa-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.tarefa-item:nth-child(even) {
+  background-color: #8fd6ff;
+}
+
+.tarefa-item:nth-child(odd) {
+  background-color: #c1eaff; 
+}
+
+.tarefa-item:last-child {
+  border-bottom: none;
+}
+
 .task-list {
   text-align: center;
   padding: 20px;
   background: #cce0ff; 
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
   font-weight: bold;
 }
 
@@ -107,68 +130,143 @@ button.primary {
   text-align: center;
   border: 2px solid #74a2ff; 
 }
-.box {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  flex: 1;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
 
-.total-project {
-    background: #3388ff;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
+#totalCost {
+  font-size: 36px;
+  font-weight: bold;
+  color: #0055ff;
+  text-align: center;
 }
 
 footer {
-    background-color: #0055ff;
-    color: white;
-    padding: 30px 0;
-    width: 100%;
+  background-color: #0055ff;
+  color: white;
+  padding: 30px 0;
+  width: 100%;
 }
 
 .footer-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    padding: 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0 20px;
 }
 
 .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .footer-logo img {
-    width: 40px; 
-    height: auto;
-    padding-bottom: 25px;
-    padding-left: 25px;
+  width: 40px; 
+  height: auto;
+  padding-bottom: 25px;
+  padding-left: 25px;
 }
 
 .footer-logo span {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .footer-info {
-    text-align: right; 
+  text-align: right; 
 }
 
 .footer-info p {
-    margin: 5px 0;
-    font-size: 14px;
-    opacity: 0.9;
+  margin: 5px 0;
+  font-size: 14px;
 }
 
 .hidden {
   display: none;
+}
+
+select {
+  border: 2px solid #55aaff;
+  background: #55aaff;
+  padding: 10px;
+  color: white;
+  margin-right: 10px;
+}
+
+/* celular */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header img {
+    width: 60px;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tabs button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  button.primary {
+    width: 100%;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  .tarefa-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  footer {
+    padding: 20px 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-logo img {
+    padding: 0;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+
+  #totalCost {
+    font-size: 28px;
+  }
 }
